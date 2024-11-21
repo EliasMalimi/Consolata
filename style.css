@@ -1,0 +1,34 @@
+body{
+	background-color: #376766;
+}
+.row{
+	margin-top: 12px;
+	padding-top: 12px;
+	
+	width: 100%;
+
+}
+
+.column{
+	background-color: #fff;
+	box-shadow: 5px 5px 10px black;
+	color: seagreen;
+	
+}
+
+	
+
+.row2{
+	background-color: #fff;
+	box-shadow: 5px 5px 10px black;
+	color: seagreen;
+	margin-top: 12px;
+	padding-top: 0px;
+}
+.newssection{
+	display: inline-flex;
+	flex-wrap: nowrap;
+}
+.border-right{
+	border-right: 2px;
+}
