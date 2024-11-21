@@ -1,81 +1,502 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Featured Objects</title>
+	<script src="../assets/js/color-modes.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Startech college</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars-offcanvas/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .title {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-        }
-        .item:last-child {
-            border-bottom: none;
-        }
-        .item img {
-            max-width: 150px;
-            margin-right: 20px;
-            border-radius: 10px;
-        }
-        .item-details {
-            flex: 1;
-        }
-        .item-details h2 {
-            margin: 0 0 10px;
-            color: #555;
-        }
-        .item-details p {
-            margin: 0;
-            color: #777;
-        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
     </style>
-</head>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="navbars-offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+  </head>
 <body>
+	<main>
+		<div class="container">
+			<div class="row" style="margin-top: 0px; padding-top: 0px;">
+	<!----Nav from bootstrap-->
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-primary" aria-label="Third navbar example">
     <div class="container">
-        <h1 class="title">Featured Objects</h1>
-        <div class="item">
-            <img src="https://via.placeholder.com/150" alt="Object 1">
-            <div class="item-details">
-                <h2>Object 1</h2>
-                <p>Description for the first object. It's really fascinating and worth your attention.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="https://via.placeholder.com/150" alt="Object 2">
-            <div class="item-details">
-                <h2>Object 2</h2>
-                <p>Description for the second object. This one has an interesting backstory.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="https://via.placeholder.com/150" alt="Object 3">
-            <div class="item-details">
-                <h2>Object 3</h2>
-                <p>Description for the third object. You won't believe how cool this is.</p>
-            </div>
-        </div>
+    	
+    <img src="../images/logo.png" style="padding-right: 1%; height: 50px;width:50px; box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4) black;">
+      <a class="navbar-brand" href="#">Startech College</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarsExample03" >
+      	<nav style="float: right; width: 99%;">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0" style="float: right;" >
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">About Us</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Study At Startech College</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Why You should choose us</a></li>
+              <li><a class="dropdown-item" href="#">Our Programmes</a></li>
+              <li><a class="dropdown-item" href="#">Startech college family</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Login</a>
+          </li>
+        </ul>
+    </nav>
+        <!---<form role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        </form>--->
+      </div>
+    
+    </nav>
+</div>
+	<!----End of Nav from bootstrap-->
+	
+	<!---<div class="row" style="margin-top:0px; padding-top: 0px;">--->
+	<!-----The carousal from bootstrap---->
+
+	  <div id="myCarousel" class="carousel slide mb-6 pointer-event row" data-bs-ride="carousel " style="margin-top:0px; padding-top: 0px;" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
     </div>
+    <div class="carousel-inner" style="padding: 0px;">
+      <div class="carousel-item">
+        <img src="../images/hero_5.jpg" style="max-height: 400px; width: 100%;">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../images/hero_5.jpg" style="max-height: 400px; width: 100%;">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img src="../images/hero_5.jpg" style="max-height: 400px; width: 100%;">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!-----The end of carousal from bootstrap---->
+<!--</div>--->
+
+<!----Directors message and background of our college--->
+<div class="row">
+	<div class="column col-sm-4" style="border-right: solid;">
+		<h3>DIRECTOR'S MESSAGE</h3>
+		<img src="../images/image1.jpg" style="width:80%; height: 40%; box-shadow: inherit;">
+		<p>I would liketo use this opportunity to invite you to joine us in various progrmmes that we provide in our colege. We are pride of the marketable products from our college. The new intake time is Now Open. I would like to invite you all!</p>
+	</div>
+	<div class="column col-sm-8" style="width: ">
+
+		<h4>The background of our college</h4>
+		<p>I would liketo use this opportunity to invite you to joine us in various progrmmes that we provide in our colege. We are pride of the marketable products from our college. The new intake time is Now Open. I would like to invite you all!</p>
+		<h4>Our Vission</h4>
+		<p>I would liketo use this opportunity to invite you to joine us in various progrmmes that we provide in our colege. We are pride of the marketable products from our college. The new intake time is Now Open. I would like to invite you all!</p>
+		<h4>Our Mission</h4>
+		<p>I would liketo use this opportunity to invite you to joine us in various progrmmes that we provide in our colege. We are pride of the marketable products from our college. The new intake time is Now Open. I would like to invite you all!</p>
+	</div>
+</div>
+<!----End of Directors message and background of our college--->
+
+	<div class="row2 row" >
+
+		<!----ACCORDION FROM BOOTSTRAP--------->
+
+	<article class="my-3" id="accordion" >
+      <div class="bd-heading xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 style="color: white; background-color: #376766; box-shadow: inherit;">Programmes offered</h3>
+        <!---<a class="d-flex align-items-center" href="../components/accordion/">Documentation</a>--->
+      </div>
+
+      <div>
+        <div class="bd-example-snippet bd-code-snippet">
+  <div class="bd-example m-0 border-0">
+    
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Electrical Installation
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" style="">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Information Technology
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Secretarial Courses
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                Hotel Management and Tour guid
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Early Child Education
+              </button>
+            </h4>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Motor Vehicle Mechanics
+              </button>
+            </h4>
+            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+</div>
+
+      </div>
+    </article>
+		<!----END OF ACCORDION FROM BOOTSTRAP--->
+	
+</div>
+<div class="row">
+<h3 style="color: white; box-shadow: inherit; background-color: #376766;">Current News</h3>
+</div>
+<div class="row2 row">
+
+	<!----ALBUM FROM BOOTSTRAP---------->
+
+	<div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+	<!----END OF ALBUM FROM BOOTSTRAP--->
+</div>
+<!----Pickinick and Events------>
+	<!-----The carousal from bootstrap---->
+<div class="row"><h3 style="color: white;box-shadow: inherit; background-color: #376766">Picnic and Events</h3></div>
+	  <div id="myCarousel2" class="carousel slide mb-6 pointer-event row" data-bs-ride="carousel " style="margin-top:12px; padding-top: 0px;" >
+    <!---<div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+    </div>---->
+    <div class="carousel-inner" style="padding: 0px;">
+      <div class="carousel-item  " >
+      	<div style="display:flex; flex-wrap: wrap;">
+      	<div class="col-sm-6 column " style="border-right: 2px">
+        <img src="../images/hero_5.jpg" style="max-height: 400px; width: 100%;">
+        <div class="container">
+          <div class="carousel-caption text-start ">
+            <h1></h1>
+           </div>
+        </div>
+      </div>
+      <div class="col-sm-6 column" style="background-color: #000; padding-left:5px ;">
+        <h2 style="text-align: center;">HELLO hiii</h2>
+        <p>This is unforgatable event where Startech college family were spending their holiday by visting Ruaha National Park.It is located in southern highlands of Tanzania</p>
+      </div>
+      </div> 
+  </div>
+      <div class="carousel-item " >
+      	<div style="display:flex; flex-wrap: wrap;">
+        <div class="col-sm-6 column" style="border-right: 2px">
+        <img src="../images/hero_5.jpg" style="max-height: 400px; width: 100%;">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1></h1>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6 column" style="background-color: #000; padding-left:5px;">
+        <h2 style="text-align: center;">HELLO</h2>
+        <p>This is unforgatable event where Startech college family were spending their holiday by visting Ruaha National Park.It is located in southern highlands of Tanzania</p>
+      </div>
+      </div>
+      </div>
+      <div class="carousel-item active">
+        <div style="display:flex; flex-wrap: wrap;">
+        <div class="col-sm-6 column" style="border-right: 2px">
+        <img src="../images/hero_5.jpg" style="max-height: 400px; width: 100%;">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1></h1>
+           </div>
+        </div>
+      </div>
+      <div class="col-sm-6 column" style="background-color: #000; padding-left: 5px; ">
+        <h2 style="text-align: center;">HELLO World</h2>
+        <p>This is unforgatable event where Startech college family were spending their holiday by visting Ruaha National Park.It is located in southern highlands of Tanzania</p>
+      </div>
+      </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next " type="button" data-bs-target="#myCarousel2" data-bs-slide="next" style="color: blue;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!-----The end of carousal from bootstrap---->
+<!---End of Pickinick and Events-->
+
+<!----footer from BOOTSTRAP------------>
+<footer class="py-5" >
+    <div class="row" style="color: white">
+      <div class="col-6 col-md-4 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="nav flex-column"style="color: white" >
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 " style="color: white">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 " style="color: white">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 " style="color: white">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 " style="color: white">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 " style="color: white">About</a></li>
+        </ul>
+      </div>
+
+
+
+      <div class="col-md-6 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p style="color: white">© 2024 Startech college. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+<!----End of footer from BOOTSTRAP----->
+</div>
+</main>
+	
+
+	<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
